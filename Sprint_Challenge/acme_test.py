@@ -28,5 +28,12 @@ class AcmeProductTests(unittest.TestCase):
         self.assertEqual((prod.flammability * prod.weight), 80)
 
 
+class AcmeReportTests(unittest.TestCase):
+    """Making sure Acme products are the tops!"""
+    def test_default_num(self):
+        """Test default number of products."""
+        products = generate_products()
+        self.assertEqual(len(products), 30)
+
 if __name__ == '__main__':
     unittest.main()
