@@ -25,6 +25,13 @@ def generate_products(num_products=30):
 
 def inventory_report(products):
 
+    unique_list = []
+    unique_count = 0
+    for i in range(0, len(products)):
+        if products[i].name not in unique_list:
+            unique_list.append(products[i].name)
+            unique_count = unique_count + 1
+
     sum_price = 0
     for i in range(0, len(products)):
         sum_price = sum_price + products[i].price
@@ -41,8 +48,7 @@ def inventory_report(products):
     avg_flame = sum_flame / len(products)
 
     print('ACME INVENTORY REPORT')
-    print(products[0].name)
-    print('Unique product names:')
+    print('Unique product names:', unique_count)
     print('Average price:', avg_price)
     print('Average weight:', avg_weight)
     print('Average flammmability:', avg_flame)
