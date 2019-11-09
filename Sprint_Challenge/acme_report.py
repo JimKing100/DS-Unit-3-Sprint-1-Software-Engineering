@@ -11,7 +11,7 @@ def generate_products(num_products=30):
     for i in range(0, num_products):
         adj = choice(ADJECTIVES)
         noun = choice(NOUNS)
-        new_name = adj + noun
+        new_name = adj + ' ' + noun
         new_price = randint(5, 100)
         new_weight = randint(5, 100)
         new_flame = uniform(0, 2.5)
